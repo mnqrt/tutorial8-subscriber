@@ -15,3 +15,11 @@ Jadi, string `guest:guest@localhost:5672` digunakan untuk mengakses sebuah messa
  # Simulation slow subscriber
 ![Alt text](image/ss6.png)
 Jumlah total pesan yang mengantri dapat dipengaruhi oleh beberapa faktor, salah satunya adalah ketika publisher mengirim pesan dengan cepat ke RabbitMQ, sehingga setiap proses pengiriman menambah panjang antrian. Sementara itu, subscriber mengonsumsi pesan dengan kecepatan yang lebih lambat karena adanya penundaan sengaja selama 1 detik per pemrosesan pesan. Penundaan ini dalam pemrosesan memungkinkan pesan untuk menumpuk dalam antrian.
+
+# Reflection and Running at least three subscribers
+![Alt text](image/ss7.png)
+![Alt text](image/ss8.png)
+![Alt text](image/ss9.png)
+![Alt text](image/ss10.png)
+![Alt text](image/ss11.png)
+Ketika beberapa subscriber memproses pesan secara bersamaan, peningkatan dalam panjang antrian pesan akan berkurang lebih cepat karena adanya pemrosesan paralel dan peningkatan throughput. Dengan setiap subscriber menangani pesan secara independen, beban kerja tersebar lebih merata di seluruh sistem, mengurangi kemungkinan antrean menjadi panjang dan memungkinkan lebih banyak pesan diproses secara bersamaan.
