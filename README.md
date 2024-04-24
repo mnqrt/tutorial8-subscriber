@@ -11,3 +11,7 @@ AMQP adalah singkatan dari Advanced Message Queuing Protocol. Ini adalah protoko
 - `5672` adalah nomor port default yang digunakan oleh RabbitMQ untuk menerima koneksi AMQP.
 
 Jadi, string `guest:guest@localhost:5672` digunakan untuk mengakses sebuah message broker AMQP yang berjalan di mesin lokal menggunakan kredensial default `guest:guest` melalui port standar `5672`.
+
+ # Simulation slow subscriber
+![Alt text](image/ss6.png)
+Jumlah total pesan yang mengantri dapat dipengaruhi oleh beberapa faktor, salah satunya adalah ketika publisher mengirim pesan dengan cepat ke RabbitMQ, sehingga setiap proses pengiriman menambah panjang antrian. Sementara itu, subscriber mengonsumsi pesan dengan kecepatan yang lebih lambat karena adanya penundaan sengaja selama 1 detik per pemrosesan pesan. Penundaan ini dalam pemrosesan memungkinkan pesan untuk menumpuk dalam antrian.
